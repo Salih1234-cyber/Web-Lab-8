@@ -19,3 +19,22 @@ const COURSES = [
 
 let requestCount = 0;
 
+// 1. Middleware: Request Logger
+const requestLogger = (req, res, next) => {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.url}`);
+  next();
+};
+
+// 2. Middleware: Request Counter
+const requestCounter = (req, res, next) => {
+  requestCount += 1;
+  next();
+};
+
+// Middleware'leri route'lardan ÖNCE tanımlıyoruz
+app.use(requestLogger);
+app.use(requestCounter);
+
+// Statik dosyaları sunma (GET / otomatik olarak public/index.html döner)
+app.use(express.static(publicDir));
