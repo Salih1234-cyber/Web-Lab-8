@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Web Engineering Programme</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Modern Web Engineering Programme</h1>
+      <p>
+        Welcome to the Modern Web Engineering study programme. Our curriculum focuses on 
+        building scalable client-server architectures, mastering HTTP fundamentals, and 
+        developing clean back-end services without unnecessary abstractions.
+      </p>
+    </header>
+
+    <section class="controls">
+      <h2>Test API Endpoints</h2>
+      <div class="button-grid">
+        <button data-method="GET" data-url="/api/courses">GET /api/courses</button>
+        <button data-method="GET" data-url="/api/status">GET /api/status</button>
+        <button data-method="GET" data-url="/api/headers">GET /api/headers</button>
+        <button data-method="POST" data-url="/api/subscribe">POST /api/subscribe</button>
+        <button data-method="GET" data-url="/api/admin">GET /api/admin</button>
+        <button data-method="GET" data-url="/api/stats">GET /api/stats</button>
+        <button data-method="GET" data-url="/api/does-not-exist" class="btn-danger">GET /api/does-not-exist (404)</button>
+      </div>
+    </section>
+
+    <section class="output">
+      <h2>Response</h2>
+      <div class="status-bar">
+        Status: <span id="status-code">Waiting for request...</span>
+      </div>
+      <pre id="response-body">Click any button above to test an endpoint.</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
