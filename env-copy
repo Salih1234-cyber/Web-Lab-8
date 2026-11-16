@@ -1,0 +1,4 @@
+PORT=3000
+
+# Copy this file to .env and adjust the values if needed
+PORT=3000
